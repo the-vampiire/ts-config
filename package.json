@@ -1,0 +1,45 @@
+{
+  "name": "ts-node-config",
+  "version": "1.0.0",
+  "description": "base config for typescript projects",
+  "main": "build/index.js",
+  "repository": "https://github.com/the-vampiire/ts-node-config",
+  "license": "MIT",
+  "author": {
+    "name": "the-vampiire",
+    "url": "https://github.com/the-vampiire"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "fix": "prettier-eslint \"src/**/*.ts\" --write",
+    "test": "run-s build test:*",
+    "test:lint": "eslint src --ext .ts",
+    "test:prettier": "prettier \"src/**/*.ts\" --list-different",
+    "test:src": "jest --runInBand",
+    "watch:build": "tsc -p tsconfig.json -w",
+    "watch:test": "jest --runInBand --watch --verbose --coverage"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.0.1",
+    "@typescript-eslint/parser": "^5.0.1",
+    "eslint": "^7.3.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-newline-destructuring": "^1.0.1",
+    "jest": "^27.3.1",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-typeahead": "^1.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "prettier-eslint": "10.1.0",
+    "prettier-eslint-cli": "^5.0.1",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  }
+}
